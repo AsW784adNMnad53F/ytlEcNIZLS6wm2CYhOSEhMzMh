@@ -17396,9 +17396,7 @@ ga('send', 'pageview');</script>
 								return c(t)
 							})
 						}, r = 0, l = d.length; r < l; r++) O = d[r], s(O);
-					return i.addEventListener("click", function(t) {
-						return e.OO0OI.IOlO1.l1l01(), h.querySelector("[name=amount]").value = document.querySelector(".pricechoice .active").getAttribute("data-price"), h.querySelector("[name=lc]").value = translations.getLang().toUpperCase(), h.querySelector("[name=custom]").value = e.OO0OI.IOlO1.key, h.querySelector("[name=currency_code]").value = "€" === e.currency ? "EUR" : "USD", h.submit()
-					}), o.addEventListener("submit", function(i) {
+					return o.addEventListener("submit", function(i) {
 						var s;
 						if (i.preventDefault(), !e.ECPverifing) return s = n.value.replace(/[o|O]/g, "0").toLowerCase(), e.OO0OI.IOlO1.l0O1I(s) ? (e.OO0OI.IOlO1.OOlOO(s), e.ECPverifing = !0, a.innerHTML = "<i class='fa fa-cog fa-spin'></i>", e.OO0OI.IOlO1.verify(function(t) {
 							return e.ECPverifing = !1, t ? e.reloadGame() : a.innerHTML = "OK"
