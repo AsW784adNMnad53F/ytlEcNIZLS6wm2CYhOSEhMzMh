@@ -9396,7 +9396,7 @@ ga('send', 'pageview');</script>
 				return o = new IlI0O(this, t, e, i, s, l, n, a), this.crystals_by_id[a] = o, this.OOl0I.push(o), this.ll110.add(o.OO1IO)
 			}, t.prototype.eat = function(t, e) {
 				var i, s;
-				if (e === this.OO0OI.lOI0l.status.id ? (s = this.OO0OI.lOI0l.status, 1) : (s = this.OO0OI.O0lO1.lO0II.O0lI0[e], null != s && (s = s.I1Ol0.status, this.OO0OI.O0lO1.lO0II.I0Ill >= s.O1I0I + 60 && (s = null)), .5), null != (i = this.crystals_by_id[t]) && (i.eater = s, i.eat_time = this.OO0OI.O0lO1.lO0II.I0Ill, null != s && this.OO0OI.l100I.collect(s.x, s.y, i.points), null != this.OO0OI.display.screen.O0lI1.figures)) return this.OO0OI.display.screen.O0lI1.figures.bonus(i.points, i.OO1IO.position.x, i.OO1IO.position.y, 16744576, 11)
+				if (e === this.OO0OI.lOI0l.status.id ? (s = this.OO0OI.lOI0l.status, 1) : (s = this.OO0OI.O0lO1.lO0II.O0lI0[e], null != s && (s = s.I1Ol0.status, this.OO0OI.O0lO1.lO0II.I0Ill >= s.O1I0I + 60 && (s = null)), .5), null != (i = this.crystals_by_id[t]) && (i.eater = s, i.eat_time = this.OO0OI.O0lO1.lO0II.I0Ill, null != s && this.OO0OI.l100I.collect(s.x, s.y, i.points), null != this.OO0OI.display.screen.O0lI1.figures)) return this.OO0OI.display.screen.O0lI1.figures.bonus(i.points, i.OO1IO.position.x, i.OO1IO.position.y, 16744579, 11)
 			}, t.prototype.remove = function(t) {
 				var e;
 				return this.ll110.remove(t.OO1IO), delete this.crystals_by_id[t.id], e = this.OOl0I.indexOf(t), e >= 0 && this.OOl0I.splice(e, 1), t.dispose()
@@ -9689,6 +9689,9 @@ ga('send', 'pageview');</script>
 			}, t.prototype.l1I11 = function(t) {
 				var e, i, s;
 				switch (null == t && (t = 10), this.built_material = this.finish, this.finish) {
+					case "electricblue":
+						this.buildX27Material();
+						break;
 					case "alloy":
 						this.buildAlloyMaterial();
 						break;
@@ -9698,8 +9701,20 @@ ga('send', 'pageview');</script>
 					case "titanium":
 						this.buildTitaniumMaterial();
 						break;
+					case "fullcolor":
+						this.buildFullColorMaterial();
+						break;
+					case "custommaterial":
+						this.CustomMaterial();
+						break;
 					case "carbon":
 						this.buildCarbonMaterial();
+						break;
+					case "copper":
+						this.buildCopperMaterial();
+						break;
+					case "diamond":
+						this.buildDiamondMaterial();
 						break;
 					default:
 						this.buildDefaultMaterial()
@@ -9724,6 +9739,19 @@ ga('send', 'pageview');</script>
 					emissive: OO00I.hsvToRgbHex(this.hue, .5, 1),
 					emissiveMap: IIlO0
 				})
+			}, t.prototype.buildCustomMaterial = function () {
+				var t;
+				return t = OO00I.hsvToRgbHex(this.hue, 1, 1), this.material = new THREE.MeshPhongMaterial({
+					map: lO0O1,
+					bumpMap: lO0O1,
+					specularMap: lO0O1,
+					specular: 12632256,
+					shininess: 50,
+					bumpScale: .1,
+					color: customaterial,
+					emissive: OO00I.hsvToRgbHex(this.hue, .5, 1),
+					emissiveMap: IIlO0
+					})
 			}, t.prototype.buildAlloyMaterial = function() {
 				return this.material = new THREE.MeshPhongMaterial({
 					map: lO0O1,
@@ -11732,6 +11760,9 @@ ga('send', 'pageview');</script>
 			}, t.prototype.l1I11 = function(t) {
 				var e, i, s;
 				switch (null == t && (t = 10), this.built_material = this.finish, this.finish) {
+					case "electricblue":
+						this.buildX27Material();
+						break;
 					case "alloy":
 						this.buildAlloyMaterial();
 						break;
@@ -11740,6 +11771,12 @@ ga('send', 'pageview');</script>
 						break;
 					case "titanium":
 						this.buildTitaniumMaterial();
+						break;
+					case "fullcolor":
+						this.buildFullColorMaterial();
+						break;
+					case "custommaterial":
+						this.CustomMaterial();
 						break;
 					case "carbon":
 						this.buildCarbonMaterial();
@@ -11758,6 +11795,18 @@ ga('send', 'pageview');</script>
 				return null == t && (t = 10), this.material = new THREE.MeshLambertMaterial({
 					map: lO0O1,
 					color: 16777215,
+					emissive: OO00I.hsvToRgbHex(this.hue, .5, 1),
+					emissiveMap: IIlO0
+				})
+			}, t.prototype.buildX27Material = function() {
+				return this.material = new THREE.MeshPhongMaterial({
+					map: lO0O1,
+					bumpMap: lO0O1,
+					specularMap: lO0O1,
+					specular: 6316128,
+					shininess: 20,
+					bumpScale: .1,
+					color: 6316128,
 					emissive: OO00I.hsvToRgbHex(this.hue, .5, 1),
 					emissiveMap: IIlO0
 				})
@@ -11785,6 +11834,19 @@ ga('send', 'pageview');</script>
 					emissive: OO00I.hsvToRgbHex(this.hue, .5, 1),
 					emissiveMap: IIlO0
 				})
+			}, t.prototype.buildCustomMaterial = function () {
+				var t;
+				return t = OO00I.hsvToRgbHex(this.hue, 1, 1), this.material = new THREE.MeshPhongMaterial({
+					map: lO0O1,
+					bumpMap: lO0O1,
+					specularMap: lO0O1,
+					specular: 12632256,
+					shininess: 50,
+					bumpScale: .1,
+					color: customaterial,
+					emissive: OO00I.hsvToRgbHex(this.hue, .5, 1),
+					emissiveMap: IIlO0
+					})
 			}, t.prototype.buildCarbonMaterial = function() {
 				return this.material = new THREE.MeshPhongMaterial({
 					map: lO0O1,
@@ -17942,6 +18004,9 @@ ga('send', 'pageview');</script>
 		}, t.prototype.drawMaterial = function(t, e, i) {
 			var s, l, n, a, o, r, h, O, u, d;
 			switch (this.finish) {
+				case "electricblue":
+                    s = t.createLinearGradient(0, 0, 0, i), s.addColorStop(0, "hsla(220,100%,30%)"), s.addColorStop(.5, "hsla(200,100%,70%)"), s.addColorStop(.5, "hsla(220,100%,40%)"), s.addColorStop(1, "hsla(200,100%,70%)");
+                    break;
 				case "alloy":
 					s = t.createLinearGradient(0, 0, 0, i), s.addColorStop(0, "#68A"), s.addColorStop(.5, "#FFF"), s.addColorStop(.5, "#765"), s.addColorStop(1, "#CCC");
 					break;
@@ -17950,6 +18015,18 @@ ga('send', 'pageview');</script>
 					break;
 				case "gold":
 					s = t.createLinearGradient(0, 0, 0, i), s.addColorStop(0, "hsl(40,100%,50%)"), s.addColorStop(.5, "hsl(40,100%,80%)"), s.addColorStop(.5, "hsl(20,100%,30%)"), s.addColorStop(1, "hsl(40,100%,50%)");
+					break;
+				case "custommaterial":
+					s = customaterial;
+					break;
+				case "copper":
+					s = t.createLinearGradient(0, 0, 0, i), s.addColorStop(0, "#A07050"), s.addColorStop(.5, "#B4805D"), s.addColorStop(.5, "#A07050"), s.addColorStop(1, "#B4805D");
+					break;
+				case "diamond":
+					s = t.createLinearGradient(0, 0, 0, i), s.addColorStop(0, "#2FCCFF"), s.addColorStop(.5, "#36B7EC"), s.addColorStop(.5, "#2FCCFF"), s.addColorStop(1, "#36B7EC");
+					break;
+				case "fullcolor":
+					s = t.createLinearGradient(0, 0, 0, i), s.addColorStop(0, "hsl(" + this.hue + ",90%,50%)"), s.addColorStop(.5, "hsl(" + this.hue + ",90%,70%)"), s.addColorStop(.5, "hsl(" + this.hue + ",90%,30%)"), s.addColorStop(1, "hsl(" + this.hue + ",90%,60%)");
 					break;
 				case "carbon":
 					for (s = t.createLinearGradient(0, 0, 0, i), h = Math.min(10, this.size / 10), n = a = 0, O = h - 1; a <= O; n = a += 1) s.addColorStop(n / h, "#000"), s.addColorStop((n + 1) / h, "#888");
@@ -17978,101 +18055,35 @@ ga('send', 'pageview');</script>
 			var s, l, n, a, o, r, h, O, u, d, c;
 				switch (this.icon) {
 					//custom ECPs
-				case "Cat":
-                    this.icon = "https://cdn.upload.systems/uploads/p23mkHQG.png";
-                    break;
-                case "AsteroidPumpkin":
-                    this.icon = "https://cdn.upload.systems/uploads/NQoNAdBU.png";
-                    break;
-                case "Cuda":
-                    this.icon = "https://cdn.upload.systems/uploads/kpnX6qt6.png";
-                    break;
-                case "Dreadnought":
-                    this.icon = "https://cdn.upload.systems/uploads/52mOoJan.png";
-                    break;
-                case "FaceInDark":
-                    this.icon = "https://cdn.upload.systems/uploads/tlZpGGPW.png";
-                    break;
-                case "Fly":
-                    this.icon = "https://cdn.upload.systems/uploads/x97Y0vWl.png";
-                    break;
-                case "Ghost":
-                    this.icon = "https://cdn.upload.systems/uploads/APpUlI9n.png";
-                    break;
-                case "JackOLantern":
-                    this.icon = "https://cdn.upload.systems/uploads/ingW8mrb.png";
-                    break;
                 case "Lunantium":
-                    this.icon = "https://cdn.upload.systems/uploads/v23v9rxX.png";
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501518/Lunantium_fnukri.png";
                     break;
                 case "Phantom":
-                    this.icon = "https://cdn.upload.systems/uploads/VFEuukuo.png";
-                    break;
-                case "Planet":
-                    this.icon = "https://cdn.upload.systems/uploads/JgYM4GJP.png";
-                    break;
-                case "PulseFighter":
-                    this.icon = "https://cdn.upload.systems/uploads/5nQiVj9j.png";
-                    break;
-                case "Pumpkin":
-                    this.icon = "https://cdn.upload.systems/uploads/SwKwVvNW.png";
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501518/Phantom_fithv1.png";
                     break;
                 case "RedMist":
-                    this.icon = "https://cdn.upload.systems/uploads/J6JBLAPo.png";
-                    break;
-                case "Spider":
-                    this.icon = "https://cdn.upload.systems/uploads/Hidg3xSX.png";
-                    break;
-                case "TorpWitch":
-                    this.icon = "https://cdn.upload.systems/uploads/EQn2ANjs.png";
-                    break;
-                case "USniper":
-                    this.icon = "https://cdn.upload.systems/uploads/aNybDZ4c.png";
-                    break;
-                case "Web":
-                    this.icon = "https://cdn.upload.systems/uploads/iqlqorTq.png";
-                    break;
-                case "Alien":
-                    this.icon = "https://cdn.upload.systems/uploads/207u9V2j.png";
-                    break;
-                case "Halloween":
-                    this.icon = "https://cdn.upload.systems/uploads/bmnYN3iC.png"
-                    break;
-                case "SDCChampion":
-                    this.icon = "https://cdn.upload.systems/uploads/G8cBuNFC.png"
-                    break;
-                case "SRCChampion":
-                    this.icon = "https://cdn.upload.systems/uploads/5FE6TpHF.png"
-                    break;
-                case "Translator":
-                    this.icon = "https://cdn.upload.systems/uploads/KMEJ0ozX.png"
-                    break;
-                case "Shipdesigner":
-                    this.icon = "https://cdn.upload.systems/uploads/WF6vqocY.jpg"
-                    break;
-                case "Dev":
-                    this.icon = "https://cdn.upload.systems/uploads/9amVucAV.png"
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501518/RedMist_ibcboo.png";
                     break;
                 case "SRCemerald":
-                    this.icon = "https://cdn.upload.systems/uploads/bvuVxl5q.png"
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501518/srcemerald_av7gld.png"
                     break;
                 case "SRCdiamond":
-                    this.icon = "https://cdn.upload.systems/uploads/XqQRA2js.png"
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501518/srcdia_l8yhbw.png"
                     break;
                 case "SRCbronze":
-                    this.icon = "https://cdn.upload.systems/uploads/5VaGJLEy.jpg"
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501518/srcbronze_kyqwgj.jpg"
                     break;
                 case "SRCsilver":
-                    this.icon = "https://cdn.upload.systems/uploads/apHIyN5K.png"
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501519/srcsilver_papu29.png"
                     break;
                 case "Lord":
-                    this.icon = "https://cdn.upload.systems/uploads/GMOKd0uP.png"
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501581/LightBeam_qc4mlk.png"
                     break;
                 case "LightBeam":
-                    this.icon = "https://cdn.upload.systems/uploads/2Z3fgxK4.png"
+                    this.icon = "https://res.cloudinary.com/dmixvhodi/image/upload/v1715501581/LightBeam_qc4mlk.png"
                     break;
                 case "blank":
-                    this.icon = "https://cdn.upload.systems/uploads/0zNDCd9Y.png";
+                    this.icon = "";
                     break;
             //normal ECPs
 				case "gamepedia":
@@ -18299,6 +18310,13 @@ ga('send', 'pageview');</script>
 				paw: "Paw",
 				gamepedia: "Gamepedia",
 				discord: "Discord",
+				SRCsilver: "SRCsilver",
+				SRCbronze: "SRCbronze",
+				SRCdiamond: "SRCdiamond",
+				SRCemerald: "SRCemerald",
+				RedMist: "RedMist",
+				Phantom: "Phantom",
+				Lunantium: "Lunantium",
 				medic:"Medic",blank:"Blank",seasonal:"Seasonal"
 			},
 			finish: {
@@ -18306,7 +18324,12 @@ ga('send', 'pageview');</script>
 				alloy: "Alloy",
 				gold: "Gold",
 				titanium: "Titanium",
-				carbon: "Carbon"
+				carbon: "Carbon",
+				custommaterial: "Custom Material",
+				electricblue: "Electric Blue",
+				fullcolor: "FullColor",
+				copper: "Copper",
+				diamond: "Diamond"
 			},
 			laser: {
 				0: "Single",
