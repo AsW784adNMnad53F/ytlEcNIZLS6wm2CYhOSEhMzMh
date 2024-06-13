@@ -16345,15 +16345,6 @@ ga('send', 'pageview');</script>
 				name: "respawn"
 			}))
 		}, e.prototype.say = function(t) {
-				window.movebox(JSON.stringify({
-					name: "say",
-					data: t
-				}))
-				//modify1
-				/*add "window.movebox(JSON.stringify({
-					name: "say",
-					data: t
-				}))"*/
 				return this.socket.send(JSON.stringify({
 					name: "say",
 					data: t
@@ -16510,9 +16501,7 @@ ga('send', 'pageview');</script>
 					}
 			}
 		}, e.prototype.OI0II = function(t) {
-			if (this.socket.send(t), window.movebox(t), this.status_sent_count++, (t &= 20991) !== this.last_status_sent && (this.last_status_sent = t, !this.use_status_ping)) return this.use_status_ping = !0, this.ping_status = t, this.status_ping_time = Date.now()
-			//modify2
-			//add ", window.movebox(t)"
+			if (this.socket.send(t), this.status_sent_count++, (t &= 20991) !== this.last_status_sent && (this.last_status_sent = t, !this.use_status_ping)) return this.use_status_ping = !0, this.ping_status = t, this.status_ping_time = Date.now()
 		}, e.prototype.statusPingCheck = function(t) {
 			var e, i, s, l, n;
 			if (this.use_status_ping) {
@@ -16529,80 +16518,40 @@ ga('send', 'pageview');</script>
 		}, e.prototype.OIl0l = function(t) {
 			return this.OO0OI.names.set(t.data.id, t.data.player_name, t.data)
 		}, e.prototype.pushType = function(t) {
-				window.movebox(JSON.stringify({
-					name: "ship_type",
-					data: t
-				}))
-				//modify3 
 				return this.socket.send(JSON.stringify({
 					name: "ship_type",
 					data: t
 				}))
 			}, e.prototype.upgradeSpec = function(t) {
-				window.movebox(JSON.stringify({
-					name: "upgrade_spec",
-					data: t
-				}))
-				//modify4
 				return this.socket.send(JSON.stringify({
 					name: "upgrade_spec",
 					data: t
 				}))
 		}, e.prototype.O101l = function(t) {
-				window.movebox(JSON.stringify({
-					name: lIlI0.lOIIl,
-					data: t
-				}))
-				//modify5
 				return this.socket.send(JSON.stringify({
 					name: lIlI0.lOIIl,
 					data: t
 				}))
 			}, e.prototype.buyLife = function() {
-				window.movebox(JSON.stringify({
-					name: "buy_life",
-					data: t
-				}))
-				//modify6
 				return this.socket.send(JSON.stringify({
 					name: "buy_life"
 				}))
 		}, e.prototype.modeMsg = function(t) {
 			return this.OO0OI.mode.messageReceived(t.data)
 			}, e.prototype.sendModeMessage = function(t) {
-				window.movebox(JSON.stringify({
-					name: "modemsg",
-					data: t
-				}))
-				//modify7
 				return this.socket.send(JSON.stringify({
 					name: "modemsg",
 					data: t
 				}))
 			}, e.prototype.startTransfer = function(t, e) {
-				window.movebox(JSON.stringify({
-					name: "start_transfer"
-				}))
-				//modify8
 				return this.socket.send(JSON.stringify({
 					name: "start_transfer"
 				}))
 			}, e.prototype.endTransfer = function(t, e) {
-				window.movebox(JSON.stringify({
-					name: "end_transfer"
-				}))
-				//modify9
 				return this.socket.send(JSON.stringify({
 					name: "end_transfer"
 				}))
 		}, e.prototype.OlO10 = function(t) {
-				window.movebox(JSON.stringify({
-					name: lIlI0.l1011,
-					data: {
-						type: t
-					}
-				}))
-				//modify10
 				return this.socket.send(JSON.stringify({
 					name: lIlI0.l1011,
 					data: {
@@ -16610,13 +16559,6 @@ ga('send', 'pageview');</script>
 					}
 				}))
 		}, e.prototype.removeWeapon = function(t) {
-				window.movebox(JSON.stringify({
-					name: "remove_weapon",
-					data: {
-						index: t
-					}
-				}))
-				//modify11
 				return this.socket.send(JSON.stringify({
 					name: "remove_weapon",
 					data: {
@@ -16624,14 +16566,6 @@ ga('send', 'pageview');</script>
 					}
 				}))
 		}, e.prototype.O00IO = function(t, e) {
-				window.movebox(JSON.stringify({
-					name: lIlI0.Il0II,
-					data: {
-						index: t,
-						type: e
-					}
-				}))
-				//modify12
 				return this.socket.send(JSON.stringify({
 					name: lIlI0.Il0II,
 					data: {
@@ -16640,10 +16574,6 @@ ga('send', 'pageview');</script>
 					}
 				}))
 		}, e.prototype.toggleHealing = function(t, e) {
-				window.movebox(JSON.stringify({
-					name: "toggle_healing"
-				}))
-				//modify13
 				return this.socket.send(JSON.stringify({
 					name: "toggle_healing"
 				}))
@@ -18171,9 +18101,7 @@ ga('send', 'pageview');</script>
 					break;
 				case "pmf":
 					this.icon = "https://starblast.io/ecp/pmf.png";
-					break;
-				case "seasonal":
-					this.icon = "https://starblast.io/ecp/seasonal.png"
+					break;case"seasonal":this.icon="https://starblast.io/ecp/seasonal.png"
 			}
 			if (u = Math.round(i / 2.2), null != this.icon && this.icon.startsWith("http")) {
 				if (this.icon = this.icon.replace("http:", "https:"), null == this.icon_src && (this.icon_src = new Image, this.icon_src.crossOrigin = "Anonymous", this.icon_src.src = this.icon, this.icon_src.onload = function(t) {
