@@ -5777,7 +5777,9 @@ ga('send', 'pageview');</script>
 			}, t.prototype.buildGalaxies = function() {
 				var t, e, i;
 				for (this.galaxy_group = new THREE.Group, this.O0lO1.add(this.galaxy_group), this.galaxies = [], this.numgal = this.random.lII1l(3, 2), e = 1, i = this.numgal; e <= i; e += 1) t = new Galaxy(this.random.next()), this.galaxy_group.add(t.OOl00), t.OOl00.position.set(300 * (this.random.next() - .5), 300 * (this.random.next() - .5), -150), this.galaxies.push(t)
-			},t.prototype.buildStars=function(){return this.OO010=new Stars(500+this.random.lII1l(4500,2),this.welcome),this.O0lO1.add(this.OO010.OOl00)},t.prototype.buildSuns = function() {
+			},t.prototype.buildStars = function() {
+				return this.OO010 = new Stars(500 + this.random.lII1l(4500, 2), this.welcome), this.O0lO1.add(this.OO010.OOl00)
+			}, t.prototype.buildSuns = function() {
 				if (this.suns = [], this.number_of_suns = 1, !this.welcome)
 					for (; this.random.next() < .1;) this.number_of_suns++;
 				return this.sun_group = this.createStar(this.number_of_suns), this.sun_group.position.set(0, 0, -150), this.welcome && this.OO0OI.is_mobile_app && this.sun_group.position.set(120, 25, -150), this.OO0OI.size < 400 && (this.sun_group.position.set(0, 0, -50), this.sun_group.scale.x *= .5, this.sun_group.scale.y *= .5, this.sun_group.scale.z *= .5), this.O0lO1.add(this.sun_group), this.repulsors = []
