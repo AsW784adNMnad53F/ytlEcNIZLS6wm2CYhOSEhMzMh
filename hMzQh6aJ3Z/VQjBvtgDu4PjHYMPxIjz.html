@@ -16448,7 +16448,7 @@ ga('send', 'pageview');</script>
 					g = Ot.getUint16(2, !0), ut = Ot.getFloat32(4, !0), dt = Ot.getFloat32(8, !0), Z = Ot.getUint8(12), M = Ot.getUint8(13), m = 0 !== Ot.getUint8(14), V = Ot.getUint16(15, !0), N = Ot.getUint16(17, !0), k = this.OO0OI.O0lO1.lO0II.lI001(g, ut, dt, m), l = null != k ? k.angle : null, d = null != k ? k.damage : 1, J = this.OO0OI.O0lO1.lO0II.stations[Z], null != J && null != k && (null != (z = J.modules[M]) && 6 === k.type || !m) && (J.setModuleShield(z, V, N), 6 === k.type ? (z.bumpShield(), this.OO0OI.l100I.shield(ut, dt)) : z.shield > .1 ? (z.I0Ol0 = 1, this.OO0OI.l100I.shield(ut, dt)) : (this.OO0OI.O0lO1.OlIl1.explode(ut, dt, l, d / 10), this.OO0OI.l100I.lO10l(ut, dt)));
 					break;
 				case 141:
-					s = Ot.getUint8(1), ut = Ot.getFloat32(2, !0), dt = Ot.getFloat32(6, !0), null != this.OO0OI.display.screen.O0lI1.figures && this.OO0OI.display.screen.O0lI1.figures.bonus(s, ut, dt, 16744576, 11), this.OO0OI.l100I.collect(ut, dt, s);
+					s = Ot.getUint8(1), ut = Ot.getFloat32(2, !0), dt = Ot.getFloat32(6, !0), null != this.OO0OI.display.screen.O0lI1.figures && this.OO0OI.display.screen.O0lI1.figures.bonus(s, ut, dt, 16711680, 11), this.OO0OI.l100I.collect(ut, dt, s);
 					break;
 				case 147:
 					g = Ot.getUint8(1), s = Ot.getUint32(2, !0), g === this.OO0OI.O0lO1.lOI0l.status.id ? (this.OO0OI.message(t("You contributed %d gems to your team!").replace("%d", s)), this.OO0OI.lOI0l.status.contribution += s) : null != (S = this.OO0OI.names.get(g)) && S.length > 0 && this.OO0OI.message(t("%s contributed %d gems to your team!").replace("%d", s).replace("%s", S));
